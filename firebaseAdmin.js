@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./byte-7735e-firebase-adminsdk-svaqw-6b24755bb7.json');
+const serviceAccount = JSON.parse(process.env.google_credentials)
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -7,3 +7,4 @@ admin.initializeApp({
 });
 
 module.exports = admin;
+
